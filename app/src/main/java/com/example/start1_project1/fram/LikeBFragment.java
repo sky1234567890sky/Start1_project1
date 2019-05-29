@@ -21,8 +21,6 @@ import org.greenrobot.eventbus.ThreadMode;
  * A simple {@link Fragment} subclass.
  */
 public class LikeBFragment extends Fragment {
-
-
     private View view;
     private WebView mMyweb;
     @Override
@@ -39,7 +37,6 @@ public class LikeBFragment extends Fragment {
         mMyweb = (WebView) inflate.findViewById(R.id.myweb);
         mMyweb.setWebChromeClient(new WebChromeClient());
     }
-
     @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
     public void getData(ArtWanAndroidData.DataBean.DatasBean r){
         if (r!=null){
@@ -47,7 +44,6 @@ public class LikeBFragment extends Fragment {
             mMyweb.loadUrl(r.getLink());
         }
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
